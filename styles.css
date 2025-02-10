@@ -1,0 +1,1116 @@
+@import url('https://fonts.googleapis.com/css2?family=Faculty+Glyphic&family=Oswald:wght@200..700&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Oswald;
+}
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(0, 1, 12);
+    height: 320dvh;
+}
+body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 320dvh;
+    background-image: radial-gradient(rgba(255,255,255, 0.2) 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 2;
+    pointer-events: none;
+    z-index: -100;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/*  */
+/* .toggle {
+    padding: 1rem;
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    z-index: 100;
+}
+
+
+.custom-checkbox {
+    display: inline-block;
+    cursor: pointer;
+    padding: 10px;
+    background-color: #ddd;
+    border-radius: 5px;
+  }
+  
+  .toggleJanela {
+    position: sticky;
+    display: none;
+    padding: 10px;
+    background-color: #f0f0f0;
+    margin-top: 10px;
+    border-radius: 4px;
+    z-index: 1000;
+    height: 1000px;
+  }
+  
+  .active .toggleJanela {
+    display: block;
+    background-color: #007bff;
+    color: white;
+  } */
+
+
+
+/* .d-none {
+    display: none;
+  }
+  .custom-checkbox {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+    font-size: 20px;
+  }
+
+  #toggleCheckbox:checked + .custom-checkbox .toggleJanela{
+    display: none;
+    background-color: #f0f0f0;
+  }
+  
+  #toggleCheckbox:checked + .custom-checkbox {
+    background-color: #030303;
+    color: white;
+  } */
+
+
+.msg {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.titulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: absolute; /* Fixa o título sobre as imagens */
+    z-index: 10; /* Garante que o título fique acima das imagens */
+    color: white;
+    font-size: 40px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* sombra para dar destaque ao texto */
+    backdrop-filter: blur(5px);
+}
+.containerCarrossel {
+    width: 100%;
+    height: 250px; /* altura do carrossel */
+    overflow: hidden; /* esconde as imagens que saem da tela */
+    position: relative;
+    background-color: aliceblue;
+}
+
+.imgs {
+    display: flex;
+    width: 300%; /* largura total das 3 imagens */
+    height: 100%;
+    /* animation: slide 12s infinite; */
+}
+
+.img {
+    flex: 0 0 33.33%; /* cada imagem ocupa 33.33% da largura */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: slide 12s infinite;
+}
+
+.img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    33.33% {
+        transform: translateX(-100%);
+    }
+    66.66% {
+        transform: translateX(-200%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+.conteiner_lembrancas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 2rem;
+    h1 {
+        font-size: 36px;
+        color: white;
+    }
+    .conteinerLembrancas {
+        display: flex;
+        flex-direction: column;
+        /* flex-wrap: wrap; */
+        width: 810px;
+        height: 1000px;
+        gap: 1rem;
+        .lembranca1 {
+            flex-grow: 1;
+            /* width: 100%;
+            height: 100%; */
+            background-image: url("./img/aliancas.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: all 1s;
+            border-radius: 10px;
+            /* filter: blur(5px); */
+            border: 2px solid rgb(58, 58, 58);
+            .conteinerlembranca1 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                color: black;
+                width: 100%;
+                height: 100%;
+                backdrop-filter: blur(5px);
+                transition: all 1s;
+                border-radius: 10px;
+                /* animation: cima 1s backwards; */
+                h1 {
+                    filter: drop-shadow(0 0 10px black);
+                    transition: all 1s;
+                    border-bottom: 1px solid;
+                }
+                p {
+                    position: absolute;
+                    color: white;
+                    filter: drop-shadow(0 0 10px black);
+                    opacity: 0%;
+                    width: 50%;
+                    position: absolute;
+                    text-align: center;
+                    transition: all 1s;
+                }
+                .lembranca1 p {
+                    opacity: 0%; /* Inicialmente invisível */
+                    width: 50%;
+                    position: absolute;
+                    text-align: center;
+                    transition: opacity 1s ease-in-out; /* Transição suave de opacidade */
+                }
+                span {
+                    text-align: center;
+                    border-top: 1px solid;
+                    color: white;
+                    filter: drop-shadow(0 0 10px black);
+                    margin: 0.5rem;
+                    transition: all 1s;
+                }
+            }
+        }
+        .lembranca1:hover{
+            flex-grow: 2;
+            box-shadow: 0 0 20px red;
+        }
+        .lembranca1:hover .conteinerlembranca1{
+            backdrop-filter: blur(0px);
+        }
+        
+        .lembranca1:hover p {
+            transform: scale(1.2);
+            opacity: 100%;
+        }
+        .lembranca1:hover h1{
+            color: white;
+            /* flex-grow: 2; */
+            transform: translateY(-70px);
+            backdrop-filter: blur(0px);
+        }
+        .lembranca1:hover span{
+            color: white;
+            /* flex-grow: 2; */
+            transform: translateY(70px);
+            backdrop-filter: blur(0px);
+        }
+
+
+
+        .lembranca2 {
+            flex-grow: 1;
+            /* width: 100%;
+            height: 100%; */
+            background-image: url("./img/concha.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: all 1s;
+            border-radius: 10px;
+            transition: all 1s;
+            border-radius: 10px;
+            /* filter: blur(5px); */
+            border: 2px solid rgb(58, 58, 58);
+            .conteinerlembranca2 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                color: black;
+                width: 100%;
+                height: 100%;
+                backdrop-filter: blur(5px);
+                transition: all 1s;
+                border-radius: 10px;
+                /* animation: cima 1s backwards; */
+                h1 {
+                    filter: drop-shadow(0 0 10px black);
+                    transition: all 1s;
+                    border-bottom: 1px solid;
+                }
+                p {
+                    position: absolute;
+                    color: white;
+                    filter: drop-shadow(0 0 10px black);
+                    opacity: 0%;
+                    width: 50%;
+                    position: absolute;
+                    text-align: center;
+                    transition: all 1s;
+                }
+                .lembranca2 p {
+                    opacity: 0%; /* Inicialmente invisível */
+                    width: 50%;
+                    position: absolute;
+                    text-align: center;
+                    transition: opacity 1s ease-in-out; /* Transição suave de opacidade */
+                }
+                span {
+                    text-align: center;
+                    border-top: 1px solid;
+                    color: white;
+                    filter: drop-shadow(0 0 10px black);
+                    margin: 0.5rem;
+                    transition: all 1s;
+                }
+            }
+        }
+
+        .lembranca2:hover {
+            flex-grow: 2;
+            box-shadow: 0 0 20px red;
+        }
+        .lembranca2:hover .conteinerlembranca2{
+            backdrop-filter: blur(0px);
+        }
+        
+        .lembranca2:hover p {
+            transform: scale(1.2);
+            opacity: 100%;
+        }
+        .lembranca2:hover h1{
+            color: white;
+            /* flex-grow: 2; */
+            transform: translateY(-100px);
+            backdrop-filter: blur(0px);
+        }
+        .lembranca2:hover span{
+            color: white;
+            /* flex-grow: 2; */
+            transform: translateY(100px);
+            backdrop-filter: blur(0px);
+        }
+
+        .lembranca3 {
+            flex-grow: 1;
+            /* width: 100%;
+            height: 100%; */
+            background-image: url("./img/abraço.jpeg");
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: all 1s;
+            border-radius: 10px;
+            transition: all 1s;
+            border-radius: 10px;
+            /* filter: blur(5px); */
+            border: 2px solid rgb(58, 58, 58);
+            .conteinerlembranca3 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                color: black;
+                width: 100%;
+                height: 100%;
+                backdrop-filter: blur(5px);
+                transition: all 1s;
+                border-radius: 10px;
+                /* animation: cima 1s backwards; */
+                h1 {
+                    filter: drop-shadow(0 0 10px black);
+                    transition: all 1s;
+                    border-bottom: 1px solid;
+                }
+                p {
+                    position: absolute;
+                    color: white;
+                    filter: drop-shadow(0 0 10px black);
+                    opacity: 0%;
+                    width: 50%;
+                    position: absolute;
+                    text-align: center;
+                    transition: all 1s;
+                }
+                .lembranca3 p {
+                    opacity: 0%; /* Inicialmente invisível */
+                    width: 50%;
+                    position: absolute;
+                    text-align: center;
+                    transition: opacity 1s ease-in-out; /* Transição suave de opacidade */
+                }
+                span {
+                    text-align: center;
+                    border-top: 1px solid;
+                    color: white;
+                    filter: drop-shadow(0 0 10px black);
+                    margin: 0.5rem;
+                    transition: all 1s;
+                }
+            }
+        }
+
+        .lembranca3:hover {
+            flex-grow: 2.5;
+            box-shadow: 0 0 20px red;
+        }
+        .lembranca3:hover .conteinerlembranca3{
+            backdrop-filter: blur(0px);
+        }
+        
+        .lembranca3:hover p {
+            transform: scale(1.2);
+            opacity: 100%;
+        }
+        .lembranca3:hover h1{
+            color: white;
+            /* flex-grow: 2; */
+            transform: translateY(-125px);
+            backdrop-filter: blur(0px);
+        }
+        .lembranca3:hover span{
+            color: white;
+            /* flex-grow: 2; */
+            transform: translateY(110px);
+            backdrop-filter: blur(0px);
+        }
+
+        .lembranca4 {
+            flex-grow: 1;
+            /* width: 100%;
+            height: 100%; */
+            background-image: url("./img/formatura.jpeg");
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: all 1s;
+            border-radius: 10px;
+            transition: all 1s;
+            border-radius: 10px;
+            /* filter: blur(5px); */
+            border: 2px solid rgb(58, 58, 58);
+            .conteinerlembranca4 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                color: black;
+                width: 100%;
+                height: 100%;
+                backdrop-filter: blur(5px);
+                transition: all 1s;
+                border-radius: 10px;
+                /* animation: cima 1s backwards; */
+                h1 {
+                    filter: drop-shadow(0 0 10px black);
+                    transition: all 1s;
+                    border-bottom: 1px solid;
+                }
+                p {
+                    position: absolute;
+                    color: white;
+                    filter: drop-shadow(0 0 10px black);
+                    opacity: 0%;
+                    width: 50%;
+                    position: absolute;
+                    text-align: center;
+                    transition: all 1s;
+                }
+                .lembranca4 p {
+                    opacity: 0%; /* Inicialmente invisível */
+                    width: 50%;
+                    position: absolute;
+                    text-align: center;
+                    transition: opacity 1s ease-in-out; /* Transição suave de opacidade */
+                }
+                span {
+                    text-align: center;
+                    border-top: 1px solid;
+                    color: white;
+                    filter: drop-shadow(0 0 10px black);
+                    margin: 0.5rem;
+                    transition: all 1s;
+                }
+            }
+        }
+
+        .lembranca4:hover {
+            flex-grow: 2;
+            box-shadow: 0 0 20px red;
+        }
+        .lembranca4:hover .conteinerlembranca4{
+            backdrop-filter: blur(0px);
+        }
+        
+        .lembranca4:hover p {
+            transform: scale(1.2);
+            opacity: 100%;
+        }
+        .lembranca4:hover h1{
+            color: white;
+            /* flex-grow: 2; */
+            transform: translateY(-100px);
+            backdrop-filter: blur(0px);
+        }
+        .lembranca4:hover span{
+            color: white;
+            /* flex-grow: 2; */
+            transform: translateY(90px);
+            backdrop-filter: blur(0px);
+        }
+    }
+
+    .lembranca5 {
+        flex-grow: 1;
+        /* width: 100%;
+        height: 100%; */
+        background-image: url("./img/formatura.jpeg");
+        background-position: center;
+        background-repeat: no-repeat;
+        transition: all 1s;
+        border-radius: 10px;
+        transition: all 1s;
+        border-radius: 10px;
+        /* filter: blur(5px); */
+        border: 2px solid rgb(58, 58, 58);
+        .conteinerlembranca5 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: black;
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(5px);
+            transition: all 1s;
+            border-radius: 10px;
+            /* animation: cima 1s backwards; */
+            h1 {
+                filter: drop-shadow(0 0 10px black);
+                transition: all 1s;
+                border-bottom: 1px solid;
+            }
+            p {
+                position: absolute;
+                color: white;
+                filter: drop-shadow(0 0 10px black);
+                opacity: 0%;
+                width: 50%;
+                position: absolute;
+                text-align: center;
+                transition: all 1s;
+            }
+            .lembranca5 p {
+                opacity: 0%; /* Inicialmente invisível */
+                width: 50%;
+                position: absolute;
+                text-align: center;
+                transition: opacity 1s ease-in-out; /* Transição suave de opacidade */
+            }
+            span {
+                text-align: center;
+                border-top: 1px solid;
+                color: white;
+                filter: drop-shadow(0 0 10px black);
+                margin: 0.5rem;
+                transition: all 1s;
+            }
+        }
+    }
+
+    .lembranca5:hover {
+        flex-grow: 2;
+        box-shadow: 0 0 20px red;
+    }
+    .lembranca5:hover .conteinerlembranca4{
+        backdrop-filter: blur(0px);
+    }
+    
+    .lembranca5:hover p {
+        transform: scale(1.2);
+        opacity: 100%;
+    }
+    .lembranca5:hover h1{
+        color: white;
+        /* flex-grow: 2; */
+        transform: translateY(-100px);
+        backdrop-filter: blur(0px);
+    }
+    .lembranca5:hover span{
+        color: white;
+        /* flex-grow: 2; */
+        transform: translateY(90px);
+        backdrop-filter: blur(0px);
+    }
+}
+
+
+.mensagens {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    
+    h1 {
+        color: white;
+    }
+    .conteiner_msgs {
+        text-align: center;
+        
+        img {
+            margin: 0.2rem;
+            border-radius: 10px;
+            width: 450px;
+        }
+    }
+}
+
+/* media querie para celular */
+
+@media (min-width: 300px) and (max-width: 900px) {
+    * {
+        margin: 0 auto;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html, body {
+        width: 100%;
+        overflow-x: hidden;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        background-color: rgb(0, 1, 12);
+        height: 340dvh;
+    }
+    body::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 340dvh;
+        background-image: radial-gradient(rgba(255,255,255, 0.2) 1px, transparent 1px);
+        background-size: 20px 20px;
+        opacity: 2;
+        pointer-events: none;
+        z-index: -100;
+    }
+    main {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .msg {
+        position: absolute;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    .titulo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        position: absolute; /* Fixa o título sobre as imagens */
+        z-index: 10; /* Garante que o título fique acima das imagens */
+        color: white;
+        font-size: 35px;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* sombra para dar destaque ao texto */
+        backdrop-filter: blur(5px);
+    }
+    .containerCarrossel {
+        width: 100%;
+        height: 250px; /* altura do carrossel */
+        overflow: hidden; /* esconde as imagens que saem da tela */
+        position: relative;
+        background-color: aliceblue;
+    }
+    
+    .imgs {
+        display: flex;
+        width: 300%;
+        height: 100%;
+        overflow-x: hidden;
+        /* animation: slide 12s infinite; */
+    }
+    
+    .img {
+        flex: 0 0 33.33%; /* cada imagem ocupa 33.33% da largura */
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: slide 12s infinite;
+    }
+    
+    .img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    @keyframes slide {
+        0% {
+            transform: translateX(0);
+        }
+        33.33% {
+            transform: translateX(-100%);
+        }
+        66.66% {
+            transform: translateX(-200%);
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
+    .conteiner_lembrancas {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        gap: 1rem;
+        h1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            font-size: 36px;
+            color: white;
+        }
+        .conteinerLembrancas {
+            display: flex;
+            flex-direction: column;
+            /* flex-wrap: wrap; */
+            width: 90%;
+            height: 1000px;
+            gap: 1rem;
+            .lembranca1 {
+                flex-grow: 1;
+                width: 100%;
+                background-image: url("./img/aliancas.png");
+                background-position: center;
+                background-repeat: no-repeat;
+                transition: all 1s;
+                border-radius: 10px;
+                /* filter: blur(5px); */
+                border: 2px solid rgb(58, 58, 58);
+                .conteinerlembranca1 {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    color: black;
+                    width: 100%;
+                    height: 100%;
+                    backdrop-filter: blur(5px);
+                    transition: all 1s;
+                    border-radius: 10px;
+                    /* animation: cima 1s backwards; */
+                    h1 {
+                        width: 76%;
+                        filter: drop-shadow(0 0 10px black);
+                        transition: all 1s;
+                        border-bottom: 1px solid;
+                    }
+                    p {
+                        font-size: 13px;
+                        position: absolute;
+                        color: white;
+                        filter: drop-shadow(0 0 10px black);
+                        opacity: 0%;
+                        width: 80%;
+                        position: absolute;
+                        text-align: center;
+                        transition: all 1s;
+                    }
+                    .lembranca1 p {
+                        opacity: 0%; /* Inicialmente invisível */
+                        width: 50%;
+                        position: absolute;
+                        text-align: center;
+                        transition: opacity 1s ease-in-out; /* Transição suave de opacidade */
+                    }
+                    span {
+                        text-align: center;
+                        width: 76%;
+                        border-top: 1px solid;
+                        color: white;
+                        filter: drop-shadow(0 0 10px black);
+                        margin: 0.5rem;
+                        transition: all 1s;
+                    }
+                }
+            }
+            .lembranca1:hover{
+                flex-grow: 2;
+                box-shadow: 0 0 20px red;
+            }
+            .lembranca1:hover .conteinerlembranca1{
+                backdrop-filter: blur(0px);
+            }
+            
+            .lembranca1:hover p {
+                transform: scale(1.2);
+                opacity: 100%;
+            }
+            .lembranca1:hover h1{
+                color: white;
+                /* flex-grow: 2; */
+                transform: translateY(-70px);
+                backdrop-filter: blur(0px);
+            }
+            .lembranca1:hover span{
+                color: white;
+                /* flex-grow: 2; */
+                transform: translateY(70px);
+                backdrop-filter: blur(0px);
+            }
+    
+    
+    
+            .lembranca2 {
+                flex-grow: 1;
+                width: 100%;
+                background-image: url("./img/concha.png");
+                background-position: center;
+                background-repeat: no-repeat;
+                transition: all 1s;
+                border-radius: 10px;
+                transition: all 1s;
+                border-radius: 10px;
+                /* filter: blur(5px); */
+                border: 2px solid rgb(58, 58, 58);
+                .conteinerlembranca2 {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    color: black;
+                    width: 100%;
+                    height: 100%;
+                    backdrop-filter: blur(5px);
+                    transition: all 1s;
+                    border-radius: 10px;
+                    /* animation: cima 1s backwards; */
+                    h1 {
+                        width: 81%;
+                        filter: drop-shadow(0 0 10px black);
+                        transition: all 1s;
+                        border-bottom: 1px solid;
+                    }
+                    p {
+                        font-size: 13px;
+                        position: absolute;
+                        color: white;
+                        filter: drop-shadow(0 0 10px black);
+                        opacity: 0%;
+                        width: 80%;
+                        position: absolute;
+                        text-align: center;
+                        transition: all 1s;
+                    }
+                    .lembranca2 p {
+                        opacity: 0%; /* Inicialmente invisível */
+                        width: 50%;
+                        position: absolute;
+                        text-align: center;
+                        transition: opacity 1s ease-in-out; /* Transição suave de opacidade */
+                    }
+                    span {
+                        text-align: center;
+                        width: 81%;
+                        border-top: 1px solid;
+                        color: white;
+                        filter: drop-shadow(0 0 10px black);
+                        margin: 0.5rem;
+                        transition: all 1s;
+                    }
+                }
+            }
+    
+            .lembranca2:hover {
+                flex-grow: 2;
+                box-shadow: 0 0 20px red;
+            }
+            .lembranca2:hover .conteinerlembranca2{
+                backdrop-filter: blur(0px);
+            }
+            
+            .lembranca2:hover p {
+                transform: scale(1.2);
+                opacity: 100%;
+            }
+            .lembranca2:hover h1{
+                color: white;
+                /* flex-grow: 2; */
+                transform: translateY(-100px);
+                backdrop-filter: blur(0px);
+            }
+            .lembranca2:hover span{
+                color: white;
+                /* flex-grow: 2; */
+                transform: translateY(100px);
+                backdrop-filter: blur(0px);
+            }
+    
+            .lembranca3 {
+                flex-grow: 1;
+                width: 100%;
+                background-image: url("./img/abraço.jpeg");
+                background-position: center;
+                background-repeat: no-repeat;
+                transition: all 1s;
+                border-radius: 10px;
+                transition: all 1s;
+                border-radius: 10px;
+                /* filter: blur(5px); */
+                border: 2px solid rgb(58, 58, 58);
+                .conteinerlembranca3 {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    color: black;
+                    width: 100%;
+                    height: 100%;
+                    backdrop-filter: blur(5px);
+                    transition: all 1s;
+                    border-radius: 10px;
+                    /* animation: cima 1s backwards; */
+                    h1 {
+                        width: 76%;
+                        filter: drop-shadow(0 0 10px black);
+                        transition: all 1s;
+                        border-bottom: 1px solid;
+                    }
+                    p {
+                        font-size: 13px;
+                        flex-wrap: wrap;
+                        position: absolute;
+                        color: white;
+                        filter: drop-shadow(0 0 10px black);
+                        opacity: 0%;
+                        width: 80%;
+                        position: absolute;
+                        text-align: center;
+                        transition: all 1s;
+                    }
+                    .lembranca3 p {
+                        opacity: 0%; /* Inicialmente invisível */
+                        width: 50%;
+                        position: absolute;
+                        text-align: center;
+                        transition: opacity 1s ease-in-out; /* Transição suave de opacidade */
+                    }
+                    span {
+                        text-align: center;
+                        width: 76%;
+                        border-top: 1px solid;
+                        color: white;
+                        filter: drop-shadow(0 0 10px black);
+                        margin: 0.5rem;
+                        transition: all 1s;
+                    }
+                }
+            }
+    
+            .lembranca3:hover {
+                flex-grow: 2.5;
+                box-shadow: 0 0 20px red;
+            }
+            .lembranca3:hover .conteinerlembranca3{
+                backdrop-filter: blur(0px);
+            }
+            
+            .lembranca3:hover p {
+                transform: scale(1.2);
+                opacity: 100%;
+            }
+            .lembranca3:hover h1{
+                color: white;
+                /* flex-grow: 2; */
+                transform: translateY(-125px);
+                backdrop-filter: blur(0px);
+            }
+            .lembranca3:hover span{
+                color: white;
+                /* flex-grow: 2; */
+                transform: translateY(110px);
+                backdrop-filter: blur(0px);
+            }
+    
+            .lembranca4 {
+                flex-grow: 1;
+                width: 100%;
+                background-image: url("./img/formatura.jpeg");
+                background-position: center;
+                background-repeat: no-repeat;
+                transition: all 1s;
+                border-radius: 10px;
+                transition: all 1s;
+                border-radius: 10px;
+                /* filter: blur(5px); */
+                border: 2px solid rgb(58, 58, 58);
+                .conteinerlembranca4 {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    color: black;
+                    width: 100%;
+                    height: 100%;
+                    backdrop-filter: blur(5px);
+                    transition: all 1s;
+                    border-radius: 10px;
+                    /* animation: cima 1s backwards; */
+                    h1 {
+                        width: 78%;
+                        filter: drop-shadow(0 0 10px black);
+                        transition: all 1s;
+                        border-bottom: 1px solid;
+                    }
+                    p {
+                        font-size: 13px;
+                        position: absolute;
+                        color: white;
+                        filter: drop-shadow(0 0 10px black);
+                        opacity: 0%;
+                        width: 80%;
+                        position: absolute;
+                        text-align: center;
+                        transition: all 1s;
+                    }
+                    .lembranca4 p {
+                        opacity: 0%; /* Inicialmente invisível */
+                        width: 50%;
+                        position: absolute;
+                        text-align: center;
+                        transition: opacity 1s ease-in-out; /* Transição suave de opacidade */
+                    }
+                    span {
+                        text-align: center;
+                        width: 78%;
+                        border-top: 1px solid;
+                        color: white;
+                        filter: drop-shadow(0 0 10px black);
+                        margin: 0.5rem;
+                        transition: all 1s;
+                    }
+                }
+            }
+    
+            .lembranca4:hover {
+                flex-grow: 2;
+                box-shadow: 0 0 20px red;
+            }
+            .lembranca4:hover .conteinerlembranca4{
+                backdrop-filter: blur(0px);
+            }
+            
+            .lembranca4:hover p {
+                transform: scale(1.2);
+                opacity: 100%;
+            }
+            .lembranca4:hover h1{
+                color: white;
+                /* flex-grow: 2; */
+                transform: translateY(-100px);
+                backdrop-filter: blur(0px);
+            }
+            .lembranca4:hover span{
+                color: white;
+                /* flex-grow: 2; */
+                transform: translateY(90px);
+                backdrop-filter: blur(0px);
+            }
+        }
+    }
+    .mensagens {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        
+        h1 {
+            font-size: 30px;
+            text-align: center;
+            color: white;
+        }
+        .conteiner_msgs {
+            text-align: center;
+            width: 100%;
+            img {
+                margin: 0rem;
+                border-radius: 10px;
+                width: 185px;
+            }
+        }
+    }
+}
