@@ -89,6 +89,35 @@ function atualizarContador() {
                 // document.getElementById("horaL1").innerHTML = contadorFormatado;
                 hora.innerHTML = contadorFormatado
                 }
+
+                function atualizarContador5() {
+                    const dataInicio = new Date('2025-02-09T22:00:00'); // Defina a data de início aqui
+                    const agora = new Date();
+                    
+                    var hora = document.getElementById("horaL5")
+                
+                    // Calcula a diferença em milissegundos
+                    const diferenca = agora - dataInicio;
+                    
+                    // Converte a diferença para dias, horas, minutos e segundos
+                    const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+                    const horas = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
+                    const segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
+                    
+                    // Formata o contador
+                    const contadorFormatado = `${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos`;
+                    console.log(contadorFormatado);
+                    // Se quiser exibir na página, use: document.body.innerText = contadorFormatado;
+                    // document.getElementById("horaL1").innerHTML = contadorFormatado;
+                    hora.innerHTML = contadorFormatado
+                    }
+
+                    setInterval(atualizarContador5, 1000);
+        
+        // Inicia imediatamente
+        atualizarContador5();
+
                 setInterval(atualizarContador4, 1000);
         
         // Inicia imediatamente
